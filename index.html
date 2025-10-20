@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Student Management System</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">🎓 Student Management System</div>
+    <nav class="nav">
+      <a href="index.html" class="active">Home</a>
+      <a href="add-student.html">Add Student</a>
+      <a href="students.html">View Students</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h1>ยินดีต้อนรับ</h1>
+      <p>ระบบจัดการนักศึกษาฉบับเบาๆ สำหรับงานฝึกปฏิบัติ Front-end</p>
+      <div class="hero-actions">
+        <a class="btn primary" href="add-student.html">➕ เพิ่มข้อมูลนักศึกษา</a>
+        <a class="btn" href="students.html">📋 แสดงข้อมูลนักศึกษา</a>
+      </div>
+    </section>
+
+    <section class="info-grid">
+      <article class="card">
+        <h3>เพิ่มข้อมูล</h3>
+        <p>กรอก ชื่อ–สกุล, รหัสนักศึกษา, สาขา, เบอร์, อีเมล และบันทึกลงเบราว์เซอร์</p>
+      </article>
+      <article class="card">
+        <h3>ค้นหา & จัดการ</h3>
+        <p>ค้นหาชื่อ/รหัสอย่างเร็ว แก้ไขหรือลบข้อมูลได้จากหน้ารายการ</p>
+      </article>
+      <article class="card">
+        <h3>Responsive</h3>
+        <p>ดีไซน์อ่านง่าย รองรับจอมือถือ แท็บเล็ต และเดสก์ท็อป</p>
+      </article>
+    </section>
+  </main>
+
+  <!-- Pop-up Welcome Modal -->
+  <div id="welcomeModal" class="modal">
+    <div class="modal-content">
+      <span id="closeModal" class="close">&times;</span>
+      <img src="teacher.png" alt="ครูยืนสวัสดี" class="teacher-img" />
+      <h2>สวัสดีจ้ะนักเรียน 👋</h2>
+      <p>ยินดีต้อนรับเข้าสู่ระบบจัดการนักศึกษา</p>
+    </div>
+  </div>
+
+  <footer class="footer">Student Management System</footer>
+  <script src="script.js"></script>
+</body>
+</html>

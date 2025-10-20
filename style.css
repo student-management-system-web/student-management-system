@@ -1,0 +1,141 @@
+:root{
+  --bg:#0b0f13;
+  --surface:#111723;
+  --surface-2:#182233;
+  --text:#e9eef6;
+  --muted:#9fb0c6;
+  --primary:#1e90ff;
+  --primary-2:#156bd1;
+  --danger:#ff4747;
+  --radius:14px;
+  --shadow:0 8px 24px rgba(0,0,0,.25);
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font-family:system-ui,Segoe UI,Roboto,Arial,sans-serif;
+  background:linear-gradient(180deg, var(--bg) 0%, #0f1624 100%);
+  color:var(--text);
+  line-height:1.55;
+}
+
+a{color:var(--primary);text-decoration:none}
+a:hover{opacity:.9}
+
+.topbar{
+  position:sticky;top:0;z-index:10;
+  display:flex;justify-content:space-between;align-items:center;
+  padding:14px 20px;background:rgba(17,23,35,.8);backdrop-filter:saturate(120%) blur(8px);
+  border-bottom:1px solid #1d2a40;
+}
+.brand{font-weight:700}
+.nav a{margin-left:14px;padding:8px 12px;border-radius:10px}
+.nav a.active,.nav a:hover{background:var(--surface-2);color:#fff}
+
+.container{max-width:1050px;margin:24px auto;padding:0 16px}
+
+.hero{
+  padding:36px;border-radius:var(--radius);
+  background:radial-gradient(1200px 400px at 0% 0%, rgba(30,144,255,.18), transparent 50%),
+             radial-gradient(900px 350px at 100% 0%, rgba(30,144,255,.12), transparent 60%),
+             var(--surface);
+  box-shadow:var(--shadow);
+  text-align:center;
+}
+.hero h1{margin:0 0 6px}
+.hero-actions{margin-top:18px;display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+
+.info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:22px}
+@media (max-width:900px){.info-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:620px){.info-grid{grid-template-columns:1fr}}
+
+.card{
+  background:var(--surface);
+  padding:18px;border-radius:var(--radius);box-shadow:var(--shadow);
+  border:1px solid #1a2438;
+}
+
+.btn{
+  display:inline-block;border:1px solid #284976;background:var(--surface-2);
+  color:var(--text);padding:10px 14px;border-radius:12px;cursor:pointer;transition:.2s;
+}
+.btn:hover{transform:translateY(-1px)}
+.btn.primary{background:var(--primary);border-color:var(--primary-2);color:white}
+.btn.danger{background:#331b1b;border-color:#6e2222;color:#ffdcdc}
+
+.form-grid{
+  display:grid;gap:14px;grid-template-columns:repeat(2,1fr);
+}
+.form-grid label{display:flex;flex-direction:column;gap:6px;font-size:.95rem}
+.form-grid input{
+  padding:12px;border-radius:10px;border:1px solid #2a3b5f;background:#0e1522;color:var(--text);
+}
+.form-actions{grid-column:1 / -1;display:flex;gap:10px;flex-wrap:wrap}
+.form-msg{grid-column:1 / -1;margin:6px 0 0;color:#b5ffb0}
+@media (max-width:700px){.form-grid{grid-template-columns:1fr}}
+
+.toolbar{display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.toolbar input[type=search]{flex:1;min-width:220px;padding:10px;border-radius:10px;border:1px solid #2a3b5f;background:#0e1522;color:var(--text)}
+.toolbar .toolbar-actions{display:flex;gap:8px}
+
+.table-wrapper{overflow:auto}
+.table{width:100%;border-collapse:collapse}
+.table th,.table td{padding:12px;border-bottom:1px solid #22304a}
+.table th{background:#0f1a2a;text-align:left}
+.center{text-align:center}
+.muted{color:var(--muted)}
+.sr-only{position:absolute;left:-9999px}
+.footer{padding:20px;text-align:center;color:var(--muted)}
+/* --- Popup Modal --- */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn .4s ease;
+}
+
+.modal-content {
+  background: var(--surface);
+  padding: 20px 30px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  text-align: center;
+  color: var(--text);
+  max-width: 320px;
+  position: relative;
+  animation: slideDown .4s ease;
+}
+
+.teacher-img {
+  width: 150px;
+  margin-bottom: 15px;
+  border-radius: 12px;
+}
+
+.close {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  font-size: 24px;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.close:hover {
+  color: var(--primary);
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;} to {opacity: 1;}
+}
+
+@keyframes slideDown {
+  from {transform: translateY(-20px); opacity: 0;}
+  to {transform: translateY(0); opacity: 1;}
+}

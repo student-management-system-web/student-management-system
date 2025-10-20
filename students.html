@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Students</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">🎓 Student Management System</div>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="add-student.html">Add Student</a>
+      <a href="students.html" class="active">View Students</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h1>ข้อมูลนักศึกษา</h1>
+
+    <div class="toolbar card">
+      <input id="search" type="search" placeholder="ค้นหาชื่อ / นามสกุล / รหัสนักศึกษา..." />
+      <div class="toolbar-actions">
+        <button id="export-json" class="btn">⬇️ Export JSON</button>
+        <button id="clear-all" class="btn danger">🗑️ ลบทั้งหมด</button>
+      </div>
+    </div>
+
+    <div class="table-wrapper card">
+      <table class="table" id="students-table">
+        <thead>
+          <tr>
+            <th>รหัส</th>
+            <th>ชื่อ-สกุล</th>
+            <th>สาขา</th>
+            <th>เบอร์</th>
+            <th>อีเมล</th>
+            <th class="center">จัดการ</th>
+          </tr>
+        </thead>
+        <tbody id="tbody"></tbody>
+      </table>
+      <p id="empty" class="muted">ยังไม่มีข้อมูล ลองเพิ่มที่หน้า <a href="add-student.html">Add Student</a></p>
+    </div>
+  </main>
+
+  <footer class="footer">Student Management System</footer>
+  <script src="script.js"></script>
+</body>
+</html>
